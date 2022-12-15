@@ -1,25 +1,24 @@
 public class VariablesTheme {
     public static void main(String[] args) {
-
         //Задача_1: Вывод значений переменных на консоль.
         System.out.println("1. Вывод значений переменных на консоль.\n");
 
         byte core = 4;
-        short gpuGF = 1070;
+        short gpuGf = 1070;
         int ram = 16_000;
         long ssd = 500_000_000l;
 
-        float coreGHz = 3.50f;
-        double coreGHzTurbo = 3.80;
+        float coreGhz = 3.50f;
+        double coreGhzTurbo = 3.80;
 
         char verCore = 'K';
         boolean modeCore = false;
 
         System.out.println("Характеристики устройства:\n\n" + "Процессор Intel Core 4770: версия "
-             + verCore + "\nКол. ядер: " + core + "\nЧастота: " + coreGHz + "\nВ режиме турбо: "
-             + coreGHzTurbo + "\nРежим турбо по умолчанию включен = " + modeCore + 
-             "\nВидеокарта GeForse: " + gpuGF + "\nКоличество оперативной памяти mb: " + ram + 
-             "\nОбьем SSD в kb = " + ssd);
+                 + verCore + "\nКол. ядер: " + core + "\nЧастота: " + coreGhz +
+                 "\nВ режиме турбо: " + coreGhzTurbo + "\nРежим турбо по умолчанию включен = " +
+                 modeCore + "\nВидеокарта GeForse: " + gpuGf +
+                 "\nКоличество оперативной памяти mb: " + ram + "\nОбьем SSD в kb = " + ssd);
 
         //Задача_2: Расчет стоимости товара со скидкой
         System.out.println("\n\n2. Расчет стоимости товара со скидкой\n");
@@ -27,13 +26,13 @@ public class VariablesTheme {
         int pricePen = 100;
         int priceBook = 200;
         int numDiscount = (((pricePen + priceBook) * 11) / 100);
-        int discountedPrice = (pricePen + priceBook) - numDiscount;
+        int discountPrice = (pricePen + priceBook) - numDiscount;
 
         System.out.println("Сумма скидки = " + numDiscount +
-                "\nОбщая стоимость товаров со скидкой = " + discountedPrice);
+                "\nОбщая стоимость товаров со скидкой = " + discountPrice);
 
         //Задача_3: Вывод слова JAVA
-        System.out.println("\n3. Вывод слова JAVA\n");
+        System.out.println("\n\n3. Вывод слова JAVA\n");
 
         System.out.println("\n   J    a  v     v  a      \n" + 
                 "   J   a a  v   v  a a      \n" + 
@@ -41,76 +40,82 @@ public class VariablesTheme {
                 " JJ  a     a  V  a     a\n");
 
         //Задача_4: Вывод min и max значений целых числовых типов
-        System.out.println("\n4. Вывод min и max значений целых числовых типов\n");
+        System.out.println("\n\n4. Вывод min и max значений целых числовых типов\n");
 
-        byte maxValueByte = 127;
-        byte incremByte = (byte)(maxValueByte + 1);
-        byte decremByte = (byte)(incremByte - 1);
+        byte maxByte = 127;
+        byte incremByte = (byte)maxByte++;
+        byte decremByte = (byte)maxByte--;
 
-        System.out.println("Byte maxValue: " + maxValueByte + "\nИнкремент Byte: " + incremByte + 
+        System.out.println("Byte maxValue: " + maxByte + "\nИнкремент Byte: " + incremByte + 
                 "\nДекремент Byte: " + decremByte);
 
-        short maxValueShort = 32_767;
-        short incremShort = (short)(maxValueShort + 1);
-        short decremShort = (short)(incremShort - 1);
+        short maxShort = 32_767;
+        short incremShort = (short)maxShort++;
+        short decremShort = (short)maxShort--;
 
-        System.out.println("\nShort maxValue: " + maxValueShort + "\nИнкремент Short: " + 
+        System.out.println("\nShort maxValue: " + maxShort + "\nИнкремент Short: " + 
                 incremShort + "\nДекремент Short: " + decremShort);
 
-        int maxValueInt = 2_147_483_647;
-        int incremInt = (int)(maxValueInt + 1);
-        int decremInt = (int)(incremInt - 1);
+        int maxInt = 2_147_483_647;
+        int incremInt = (int)maxInt++;
+        int decremInt = (int)maxInt--;
 
-        System.out.println("\nInt maxValue: " + maxValueInt + "\nИнкремент Int: " + incremInt + 
+        System.out.println("\nInt maxValue: " + maxInt + "\nИнкремент Int: " + incremInt + 
                 "\nДекремент Int: " + decremInt);
 
-        long maxValueLong = 9_223_372_036_854_775_807L;
-        long incremLong = (long)(maxValueLong + 1L);
-        long decremLong = (long)(incremLong - 1L);
+        long maxLong = 9_223_372_036_854_775_807L;
+        long incremLong = (long)maxLong++;
+        long decremLong = (long)maxLong--;
 
-        System.out.println("\nLong maxValue: " + maxValueLong + "\nИнкремент Long: " + incremLong
+        System.out.println("\nLong maxValue: " + maxLong + "\nИнкремент Long: " + incremLong
                  + "\nДекремент Long: " + decremLong);
 
         //Задача_5: Перестановка значений переменных
-        System.out.println("\n5. Перестановка значений переменных\n");
+        System.out.println("\n\n5. Перестановка значений переменных\n");
 
-        int a1 = 2;
-        int b1 = 5;
-        int c = a1;
+        int a = 2;
+        int b = 5;
 
-        System.out.println("1) Перестановка с помощью третьей переменной: " + 
-                "\nисходные значения: a = " + a1 + ", b = " + b1 + " новые значения: a = " + 
-                (a1 = b1) + ", b = " + (b1 = c));
+        System.out.println("1) Перестановка с помощью третьей переменной:");
+        System.out.println("\nисходные значения: a = " + a + ", b = " + b);
 
-        int a2 = 2;
-        int b2 = 5;
+        int c = a;
+        a = b;
+        b = c;
 
-        System.out.println("\n2) Перестановка с помощью арифметических операций: " + 
-                "\nисходные значения: a = " + a2 + ", b = " + b2 + " новые значения: a = " + 
-                (a2 += b2 - (b2 = a2)) + ", b = " + (b2 += a2 - (b2 = a2)));
+        System.out.println("Значения после перестановки: а = " + a + ", b = " + b);
 
-        int a3 = 2; // 010
-        int b3 = 5; // 101
+        System.out.println("\n2) Перестановка с помощью арифметических операций:");
+        System.out.println("\nисходные значения: a = " + a + ", b = " + b);
 
-        System.out.println("\n3) Перестановка с помощью побитовой операции: " + 
-                "\nисходные значения: a = " + a3 + ", b = " + b3 + " новые значения: a = " + 
-                (a3 = a3 ^ b3 ^ (b3 = a3)) + ", b = " + (b3 = (a3 ^ b3) ^ a3));
+        a += b - (b = a);
+        b += a - (b = a);
+
+        System.out.println("Значения после перестановки: а = " + a + ", b = " + b);
+
+        System.out.println("\n3) Перестановка с помощью побитовой операции:");
+        System.out.println("\nисходные значения: a = " + a + ", b = " + b);
+
+        a = a ^ b ^ (b = a);
+        b = (a ^ b) ^ a;
+
+        System.out.println("Значения после перестановки: а = " + a + ", b = " + b);
 
         //Задача_6: Вывод символов и их кодов
-        System.out.println("\n6. Вывод символов и их кодов\n");
+        System.out.println("\n\n6. Вывод символов и их кодов\n");
 
-        char sym1 = '#'; //35
-        char sym2 = '&'; //38
-        char sym3 = '@'; //64
-        char sym4 = '^'; //94
-        char sym5 = '_'; //95
+        char numberSing = '#'; //35
+        char ampersand = '&'; //38
+        char atSign = '@'; //64
+        char caret = '^'; //94
+        char underscore = '_'; //95
 
         System.out.println("Значения переменных char:\n" + "\nКод | Символ\n" + 35 + "  |  " +
-                 sym1 + '\n' + 38 + "  |  " + sym2 + '\n' + 64 + "  |  " + sym3 + '\n' + 94 + 
-                 "  |  " + sym4 + '\n' + 95 + "  |  " + sym5);
+                 numberSing + '\n' + 38 + "  |  " + ampersand + '\n' + 64 + "  |  " + atSign + 
+                 '\n' + 94 + "  |  " + caret + '\n' + 95 + "  |  " + underscore);
 
         //Задача_7: Вывод в консоль ASCII-арт Дюка
-        System.out.println("\n7. Вывод в консоль ASCII-арт Дюка\n");
+        System.out.println("\n\n7. Вывод в консоль ASCII-арт Дюка\n");
 
         char symvDuke1 = '/';
         char symvDuke2 = '\\';
@@ -125,21 +130,21 @@ public class VariablesTheme {
                 symvDuke1 + symvDuke2 + symvDuke3 + symvDuke3 + symvDuke2);
 
         //Задача_8: Вывод количества сотен, десятков и единиц числа
-        System.out.println("\n8. Вывод количества сотен, десятков и единиц числа\n");
+        System.out.println("\n\n8. Вывод количества сотен, десятков и единиц числа\n");
 
-        int number = 123;
-        int num1 = number%10;
-        int num10 = number/10%10;
-        int num100 = number/100;
-        int numberSum = num1 + num10 + num100;
-        int numberProd = num1 * num10 * num100;
+        int num = 123;
+        int numUnit = num%10;
+        int numTen = num/10%10;
+        int numHundred = num/100;
+        int numSum = numUnit + numTen + numHundred;
+        int numProd = numUnit * numTen * numHundred;
 
-        System.out.println("Число " + number + " содержит:\n" + num100 + " сотен\n" + num10 + 
-                " десятков\n" + num1 + " единиц\n");
-        System.out.println("Сумма его цифр = " + numberSum + "\nА произведение = " + numberProd);
+        System.out.println("Число " + num + " содержит:\n" + numHundred + " сотен\n" + numTen + 
+                " десятков\n" + numUnit + " единиц\n");
+        System.out.println("Сумма его цифр = " + numSum + "\nА произведение = " + numProd);
 
         //Задача_9: Вывод времени
-        System.out.println("\n9. Вывод времени\n");
+        System.out.println("\n\n9. Вывод времени\n");
 
         int origTime = 86_399;
         int hour = origTime/60/60;
