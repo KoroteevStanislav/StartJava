@@ -117,17 +117,16 @@ public class VariablesTheme {
         //Задача_7: Вывод в консоль ASCII-арт Дюка
         System.out.println("\n\n7. Вывод в консоль ASCII-арт Дюка\n");
 
-        char symvDuke1 = '/';
-        char symvDuke2 = '\\';
-        char symvDuke3 = '_';
-        char symvDuke4 = '(';
-        char symvDuke5 = ')';
+        char slash = '/';
+        char backSlash = '\\';
+        char lParen = '(';
+        char rParen = ')';
 
-        System.out.println("Java-талисман:\n\n    " + symvDuke1 + symvDuke2 + "     " + "\n   " + 
-                symvDuke1 + "  " + symvDuke2 + "      \n" + "  " + symvDuke1 + symvDuke3 + 
-                symvDuke4 + " " + symvDuke5 + symvDuke2 + "    \n" + " " + symvDuke1 + "      " + 
-                symvDuke2 + "   \n" + symvDuke1 + symvDuke3 + symvDuke3 + symvDuke3 + symvDuke3 + 
-                symvDuke1 + symvDuke2 + symvDuke3 + symvDuke3 + symvDuke2);
+        System.out.println("Java-талисман:\n\n    " + slash + backSlash + "     " + "\n   " + 
+                slash + "  " + backSlash + "      \n" + "  " + slash + underscore + 
+                lParen + " " + rParen + backSlash + "    \n" + " " + slash + "      " + 
+                backSlash + "   \n" + slash + underscore + underscore + underscore + underscore + 
+                slash + backSlash + underscore + underscore + backSlash);
 
         //Задача_8: Вывод количества сотен, десятков и единиц числа
         System.out.println("\n\n8. Вывод количества сотен, десятков и единиц числа\n");
