@@ -226,7 +226,7 @@ public class IfElseStatementTheme {
         //Задача_9: Подсчет количества банкнот
         System.out.println("\n\n9.Подсчет количества банкнот\n");
 
-        int sumUsd = 867;
+        int sumUsd = 567;
         int usd100 = sumUsd/100;
         int usd10 = sumUsd/10%10;
         int usd1 = sumUsd%10;
@@ -241,21 +241,21 @@ public class IfElseStatementTheme {
                 usd100 -= numB100;
                 System.out.println("Выдача банкнот номиналом 100: " + numB100);
                 if(numB10 >= usd10) {
-                    int vB10 = (usd100*10) + usd10;
-                    if(vB10 >= numB10) {
-                        vB10 -= numB10;
+                    usd10 += (usd100*10);
+                    if(usd10 >= numB10) {
+                        usd10 -= numB10;
                         System.out.println("Выдача банкнот номиналом 10: " + numB10);
-                        vB10 = (vB10*10)+usd1;
-                        numB1 -= vB10;
-                        System.out.println("Выдача банкнот номиналом 1: " + vB10);
-                        sumUsd = numB100*100 + numB10*10 + vB10;
+                        usd10 = (usd10*10)+usd1;
+                        numB1 -= usd10;
+                        System.out.println("Выдача банкнот номиналом 1: " + usd10);
+                        sumUsd = numB100*100 + numB10*10 + usd10;
                         System.out.println("\nОбщая сумма выдачи: " + sumUsd);
                     } else {
-                        numB10 -= vB10;
-                        System.out.println("Выдача банкнот номиналом 10: " + vB10);
+                        numB10 -= usd10;
+                        System.out.println("Выдача банкнот номиналом 10: " + usd10);
                         numB1 -= usd1; 
                         System.out.println("Выдача банкнот номиналом 1: " + usd1);
-                        sumUsd = (vB10*10) + (numB100*100) + usd1; 
+                        sumUsd = (usd10*10) + (numB100*100) + usd1; 
                         System.out.println("\nОбщая сумма выдачи: " + sumUsd);
                     }
                 } else {
