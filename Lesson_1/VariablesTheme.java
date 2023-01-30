@@ -110,16 +110,10 @@ public class VariablesTheme {
         char caret = '^';
         char underscore = '_';
 
-        int numNumberSing = numberSing;
-        int numAmpersand = ampersand;
-        int numAtSign = atSign;
-        int numCaret = caret;
-        int numUnderscore = underscore;
-
-        System.out.println("Значения переменных char:\n" + "\nКод | Символ\n" + numNumberSing + 
-                "  |  " + numberSing + '\n' + numAmpersand + "  |  " + ampersand + 
-                '\n' + numAtSign + "  |  " + atSign + '\n' + numCaret + "  |  " + 
-                caret + '\n' + numUnderscore + "  |  " + underscore);
+        System.out.println("Значения переменных char:\n" + "\nКод | Символ\n" + (int)numberSing + 
+                "  |  " + numberSing + '\n' + (int)ampersand + "  |  " + ampersand + 
+                '\n' + (int)atSign + "  |  " + atSign + '\n' + (int)caret + "  |  " + 
+                caret + '\n' + (int)underscore + "  |  " + underscore);
 
         //Задача_7: Вывод в консоль ASCII-арт Дюка
         System.out.println("\n7. Вывод в консоль ASCII-арт Дюка\n");
@@ -152,10 +146,10 @@ public class VariablesTheme {
         //Задача_9: Вывод времени
         System.out.println("\n9. Вывод времени\n");
 
-        int totalsecondss = 86_399;
-        int hours = totalsecondss / 60 / 60;
-        int mins = totalsecondss / 60 % 60;
-        int seconds = totalsecondss % 60;
+        int totalSeconds = 86_399;
+        int hours = totalSeconds / 60 / 60;
+        int mins = totalSeconds / 60 % 60;
+        int seconds = totalSeconds % 60;
 
         System.out.println("Время: " + hours + ':' + mins + ':' + seconds);
     }
