@@ -38,23 +38,25 @@ public class IfElseStatementTheme {
         }
 
         //Задача_2: Поиск max и min числа
-        System.out.println("\n\n2. Поиск max и min числа\n");
+        System.out.println("\n2. Поиск max и min числа\n");
 
         int num1 = 18;
         int num2 = 34;
 
+        System.out.println("Исходные числа: " + num1 + " и " + num2);
+
         if(num1 > num2) {
-            System.out.println("Максимальное число: " + num1);
-            System.out.println("\nМинимальное число: " + num2);
+            System.out.println("\nМаксимальное число: " + num1);
+            System.out.println("Минимальное число: " + num2);
         } else if(num1 < num2) {
-            System.out.println("Максимальное число: " + num2);
-            System.out.println("\nМинимальное число: " + num1);
+            System.out.println("\nМаксимальное число: " + num2);
+            System.out.println("Минимальное число: " + num1);
         } else {
-            System.out.println("Оба числа равны");
+            System.out.println("\nОба числа равны");
         }
 
         //Задача_3: Проверка числа
-        System.out.println("\n\n3. Проверка числа\n");
+        System.out.println("\n3. Проверка числа\n");
 
         int num3 = 2023;
 
@@ -75,7 +77,7 @@ public class IfElseStatementTheme {
         }
 
         //Задача_4: Поиск одинаковых цифр в числах
-        System.out.println("\n\n\n4.Поиск одинаковых цифр в числах\n");
+        System.out.println("\n\n4.Поиск одинаковых цифр в числах\n");
 
         int num4 = 765;
         int num5 = 725;
@@ -83,30 +85,30 @@ public class IfElseStatementTheme {
         System.out.println("Исходные числа: " + num4 + " и " + num5);
 
         int num4Ones = num4 % 10;
-        int num4Ten = num4 / 10 % 10;
-        int num4Hundred = num4 / 100;
+        int num4Tens = num4 / 10 % 10;
+        int num4Hundreds = num4 / 100;
 
         int num5Ones = num5 % 10;
-        int num5Ten = num5 / 10 % 10;
-        int num5Hundered = num5 / 100;
+        int num5Tens = num5 / 10 % 10;
+        int num5Hundereds = num5 / 100;
 
-        if(num4Hundred == num5Hundered) {
-            System.out.println("В первом разряде цифры равны: " + num4Hundred + " = " + 
-                    num5Hundered);
+        if(num4Hundreds == num5Hundereds) {
+            System.out.println("В первом разряде цифры равны: " + num4Hundreds + " = " + 
+                    num5Hundereds);
         }
-        if(num4Ten == num5Ten) {
-            System.out.println("Во втором разряде цифры равны: " + num4Ten + " = " + num5Ten);
+        if(num4Tens == num5Tens) {
+            System.out.println("Во втором разряде цифры равны: " + num4Tens + " = " + num5Tens);
         }
         if(num4Ones == num5Ones) {
             System.out.println("В третьем разряде цифры равны: " + num4Ones + " = " + 
                     num5Ones);
         }
-        if(num4Hundred != num5Hundered && num4Ten != num5Ten && num4Ones != num5Ones) {
+        if(num4Hundreds != num5Hundereds && num4Tens != num5Tens && num4Ones != num5Ones) {
             System.out.println("\nРавных цифр нет");
         }
 
         //Задача_5: Определение символа по его коду
-        System.out.println("\n\n5.Определение символа по его коду\n");
+        System.out.println("\n5.Определение символа по его коду\n");
 
         char code = '\u0057';
 
@@ -143,7 +145,7 @@ public class IfElseStatementTheme {
         System.out.println("Итоговую сумма с %: " + sumTotal);
 
         //Задача_7: Определение оценки по предметам
-        System.out.println("\n\n7.Определение оценки по предметам\n");
+        System.out.println("\n7.Определение оценки по предметам\n");
 
         int historyPercent = 59;
         int programmingPercent = 91;
@@ -187,7 +189,7 @@ public class IfElseStatementTheme {
         System.out.println("Средний % по предметам: " + avgPercent);
 
         //Задача_8: Расчет прибыли за год
-        System.out.println("\n\n8.Расчет прибыли за год\n");
+        System.out.println("\n8.Расчет прибыли за год\n");
 
         int arenda = 5_000;
         int monthProfit = 13_000;
@@ -201,7 +203,7 @@ public class IfElseStatementTheme {
         }
 
         //Задача_9: Подсчет количества банкнот
-        System.out.println("\n\n9.Подсчет количества банкнот\n");
+        System.out.println("\n9.Подсчет количества банкнот\n");
 
         int sumRequestedUsd = 567;
         int sumRequestedHundreds = sumRequestedUsd / 100;
