@@ -3,13 +3,12 @@ public class CyclesTheme {
         //Задача_1: Подсчет суммы четных и нечетных чисел
         System.out.println("\n1.Подсчет суммы четных и нечетных чисел\n");
 
-        int num = 1;
         int sumEven = 0;
         int sumOdd = 0;
         int resultTask1 = -11;
 
         do {
-            resultTask1 += num;
+            resultTask1++;
             if (resultTask1 % 2 == 0) {
                 sumEven += resultTask1;
             } else {
@@ -17,12 +16,11 @@ public class CyclesTheme {
             }
         } while (resultTask1 <= 20);
 
-        System.out.println("Сумма четных и нечетных чисел в отрезке от: -10 до 21");
-        System.out.println("Четных = " + sumEven);
-        System.out.println("Нечетных = " + sumOdd);
+        System.out.println("В отрезке: от -10 до 21 сумма четных чисел = " + sumEven + "," 
+                + " а нечетных = " + sumOdd);
 
         //Задача_2: Вывод чисел в интервале (min и max) в порядке убывания
-        System.out.println("\n\n2.Вывод чисел в интервале (min и max) в порядке убывания\n");
+        System.out.println("\n2.Вывод чисел в интервале (min и max) в порядке убывания\n");
 
         int num1Task2 = 10;
         int num2Task2 = 5;
@@ -54,20 +52,22 @@ public class CyclesTheme {
         System.out.println("\n\n3.Вывод реверсивного числа и суммы его цифр\n");
 
         int num1Task3 = 1_234;
-        int onesNum1Task3;
-        int sumOnesNum1Task3 = 0;
+        int reverseNum1Task3;
+        int sumOnesReverseNum1Task3 = 0;
+
+        System.out.print("Реверсивное число: ");
 
         while(num1Task3 > 0) {
-            onesNum1Task3 = num1Task3 % 10;
-            sumOnesNum1Task3 += onesNum1Task3;
-            num1Task3 = (num1Task3 - onesNum1Task3) / 10;
-            System.out.print(onesNum1Task3 + ", ");
+            reverseNum1Task3 = num1Task3 % 10;
+            sumOnesReverseNum1Task3 += reverseNum1Task3;
+            num1Task3 = (num1Task3 - reverseNum1Task3) / 10;
+            System.out.print(reverseNum1Task3);
         }
 
-        System.out.println("\nСумма чисел равна: " + sumOnesNum1Task3);
+        System.out.println("\nСумма чисел равна: " + sumOnesReverseNum1Task3);
 
         //Задача_4: Вывод чисел на консоль в несколько строк
-        System.out.println("\n\n4.Вывод чисел на консоль в несколько строк\n");
+        System.out.println("\n4.Вывод чисел на консоль в несколько строк\n");
 
         int num1Task4 = 1;
         int num2Task4 = 24;
@@ -158,7 +158,7 @@ public class CyclesTheme {
         } while(numDollarSign < 5);
 
         //Задача_7: Отображение ASCII-символов
-        System.out.println("\n\n7.Отображение ASCII-символов\n");
+        System.out.println("\n7.Отображение ASCII-символов\n");
 
         System.out.println("Dec Char");
 
@@ -177,7 +177,7 @@ public class CyclesTheme {
         }
 
         //Задача_8: Проверка, является ли число палиндромом
-        System.out.println("\n\n8.Проверка, является ли число палиндромом\n");
+        System.out.println("\n8.Проверка, является ли число палиндромом\n");
 
         int num1Task8 = 1_234_321;
         int num2Task8 = num1Task8;
@@ -203,6 +203,7 @@ public class CyclesTheme {
         int sumSecondHalsNum1Task9 = 0;
 
         System.out.print("Число: " + num1Task9);
+        
         for(int i = 0; i < 3; i++) {
             sumFirstHalsNum1Task9 = sumFirstHalsNum1Task9 + num1Task9 % 10;
             num1Task9 /= 10;
