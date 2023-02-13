@@ -60,7 +60,7 @@ public class CyclesTheme {
         while(num1Task3 > 0) {
             reverseNum1Task3 = num1Task3 % 10;
             sumOnesReverseNum1Task3 += reverseNum1Task3;
-            num1Task3 = (num1Task3 - reverseNum1Task3) / 10;
+            num1Task3 /= 10;
             System.out.print(reverseNum1Task3);
         }
 
@@ -100,7 +100,7 @@ public class CyclesTheme {
             if(numTwosInNum1Task5 == 2) {
                 sumTwosInNum1Task5++;
             }
-            num1Task5 = (num1Task5 - numTwosInNum1Task5) / 10;
+            num1Task5 /= 10;
         }
 
         System.out.print("Двоек: " + sumTwosInNum1Task5);
@@ -116,34 +116,27 @@ public class CyclesTheme {
 
         for(int i = 0; i < 5; i++) {
             for(int y = 0; y < 10; y++) {
-                if(i < 5) {
-                    System.out.print("*");
-                    if(y == 9) {
-                        System.out.print("\n");
-                    }
-                }
+                System.out.print("*");
             }
+            System.out.print("\n");
         }
 
         System.out.print("\n");
 
-        int sumHash = 15;
+        int sumHash = 5;
+        int sumHash2 = 5;
 
         while (sumHash > 0) {
-            System.out.print("#");
             sumHash--;
-            if(sumHash == 10) {
-                System.out.print("\n");
-            } else if(sumHash == 6) {
-                System.out.print("\n");
-            } else if(sumHash == 3) {
-                System.out.print("\n");
-            } else if(sumHash == 1) {
-                System.out.print("\n");
+            while(sumHash2 > 0) {
+                System.out.print("#");
+                sumHash2--;
             }
+            System.out.print("\n");
+            sumHash2 = sumHash;
         }
 
-        System.out.println("\n");
+        System.out.print("\n");
 
         int numDollarSign = 0;
 
@@ -225,24 +218,25 @@ public class CyclesTheme {
 
         System.out.printf("%25s%n", "ТАБЛИЦА ПИФАГОРА\n");
 
-        for(int g = 1; g < 10; g++) {
-            if(g == 1) {
-                System.out.printf("%2$3s%1$s", "|", "_");
+        for(int g = 0; g < 10; g++) {
+            if(g == 0){
+                System.out.printf("%4s", "|");
+            } else if(g == 1){
+                System.out.printf("%1$3s%2$s", "_", "|");
             } else {
                 System.out.printf("%1$3d%2$s", g, "|");
             }
             for(int y = 2; y < 10; y++) {
                 sum1Task10 = y * g;
-                if(g == 1) {
-                    System.out.printf("%s", "__");
-                    System.out.printf("%d", y);
+                if(g == 0) {
+                    System.out.printf("%3d", y);
+                } else if(g == 1) {
+                    System.out.printf("%s", "___");
                 } else if( g > 1) {
                     System.out.printf("% 3d", sum1Task10);
                 }
-                if(y == 9) {
-                    System.out.print("\n");
-                }
             }
+            System.out.print("\n");
         }
     }
 }
