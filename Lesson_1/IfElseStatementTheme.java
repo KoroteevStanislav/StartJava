@@ -128,17 +128,17 @@ public class IfElseStatementTheme {
         System.out.println("\n\n6.Подсчет суммы вклада и начисленных банком %\n");
 
         int sumBank = 300_000;
-        int sumPercent = 0;
+        int numPercent = 10;
 
         System.out.println("Сумма вклада: " + sumBank);
 
         if(sumBank < 100_000) {
-            sumPercent = sumBank * 5 / 100;
-        } else if(sumBank <= 300_000) {
-            sumPercent = sumBank * 7 / 100;
-        } else {
-            sumPercent = sumBank * 10 / 100;
+            numPercent = 5;
+        } else if(sumBank >= 100_000 && sumBank <= 300_000) {
+            numPercent = 7;
         }
+
+        int sumPercent = (sumBank * numPercent) / 100;
         int sumTotal = sumBank + sumPercent;
 
         System.out.println("Начисленный %: " + sumPercent);
@@ -149,41 +149,31 @@ public class IfElseStatementTheme {
 
         int historyPercent = 59;
         int programmingPercent = 91;
-        int historyGrade = 0;
-        int programmingGrade = 0;
+        int historyGrade = 2;
+        int programmingGrade = 2;
 
-        if(historyGrade == 0) {
-            if(historyPercent > 60) {
-                historyGrade = 3;
-                if(historyPercent > 73 && historyPercent < 91) {
-                    historyGrade = 4;
-                } else {
-                    historyGrade = 5;
-                }
-            } else {
-                historyGrade = 2;
-            }
+        if(historyPercent > 91) {
+            historyGrade = 5;
+        } else if(historyPercent > 73) {
+            historyGrade = 4;
+        } else if(historyPercent > 60) {
+            historyGrade = 3;
         }
 
         System.out.println("Оценка по истории: " + historyGrade);
 
-        if(programmingGrade == 0) {
-            if(programmingPercent > 60) {
-                programmingGrade = 3;
-                if(programmingPercent > 73 && programmingPercent < 91) {
-                    programmingGrade = 4;
-                } else {
-                    programmingGrade = 5;
-                }
-            } else {
-                programmingGrade = 2;
-            }
+        if(programmingPercent > 91) {
+            programmingGrade = 5;
+        } else if(programmingPercent > 73) {
+            programmingGrade = 4;
+        } else if(programmingPercent > 60) {
+            programmingGrade = 3;
         }
 
         System.out.println("Оценка по программированию: " + programmingGrade);
 
         int avgPercent = (historyPercent + programmingPercent) / 2;
-        int avgGrade = (historyGrade + programmingGrade) / 2;
+        double avgGrade = (historyGrade + programmingGrade) / 2;
 
         System.out.println("\nСредний балл оценок по предметам: " + avgGrade);
         System.out.println("Средний % по предметам: " + avgPercent);
@@ -194,13 +184,14 @@ public class IfElseStatementTheme {
         int arenda = 5_000;
         int monthProfit = 13_000;
         int priceProduct = 9_000;
-        int yearProfit = monthProfit - priceProduct - arenda;
+        int yearProfit = (monthProfit - (priceProduct + arenda)) * 12;
+        char signPlus = ' ';
 
         if(yearProfit > 0) {
-            System.out.println("Прибыль за год: + " + yearProfit + " руб.");
-        } else {
-            System.out.println("Прибыль за год: " + yearProfit + " руб.");
+            signPlus = '+';
         }
+
+        System.out.println("Прибыль за год: " + signPlus + yearProfit + " руб.");
 
         //Задача_9: Подсчет количества банкнот
         System.out.println("\n9.Подсчет количества банкнот\n");
@@ -215,35 +206,34 @@ public class IfElseStatementTheme {
         int sumOnesInBank = 50;
         int sumUsdInBank = (sumHundredsInBank * 100) + (sumTensInBank * 10) + sumOnesInBank;
 
+        int outSumHundredsInBank = 0;
+        int outSumTensInBank = 0;
+
         if(sumRequestedUsd <= sumUsdInBank && sumOnesInBank >= sumRequestedOnes) {
-            if(sumHundredsInBank > sumRequestedHundreds) {
+            if(sumHundredsInBank >= sumRequestedHundreds) {
+                outSumHundredsInBank = sumRequestedHundreds;
                 sumHundredsInBank -= sumRequestedHundreds;
-                System.out.println("Выдача банкнот номиналом 100: " + sumRequestedHundreds);
-                sumRequestedUsd += sumRequestedHundreds * 100;
             } else {
-                sumRequestedHundreds -= sumHundredsInBank;
-                System.out.println("Выдача банкнот номиналом 100: " + sumHundredsInBank);
-                sumRequestedTens += sumRequestedHundreds * 10;
-                sumRequestedUsd += sumHundredsInBank * 100;
+                outSumHundredsInBank = sumHundredsInBank;
+                sumRequestedTens += (sumRequestedHundreds - sumHundredsInBank) * 10;
             }
             if(sumTensInBank > sumRequestedTens) {
+                outSumTensInBank = sumRequestedTens;
                 sumTensInBank -= sumRequestedTens;
-                System.out.println("Выдача банкнот номиналом 10: " + sumRequestedTens);
-                sumRequestedUsd += sumRequestedTens * 10;
             } else {
-                sumRequestedTens -= sumTensInBank;
-                System.out.println("Выдача банкнот номиналом 10: " + sumTensInBank);
-                sumRequestedOnes += sumRequestedTens * 10;
-                sumRequestedUsd += sumTensInBank * 10;
+                outSumTensInBank = sumTensInBank;
+                sumRequestedOnes += (sumRequestedTens - sumTensInBank) * 10;
             }
             sumOnesInBank -= sumRequestedOnes;
+            sumRequestedUsd = (outSumHundredsInBank * 100) + (outSumTensInBank * 10) 
+                    + sumRequestedOnes;
+            System.out.println("Сумма выдачи равна: " + sumRequestedUsd);
+            System.out.println("Выдача банкнот номиналом 100: " + outSumHundredsInBank);
+            System.out.println("Выдача банкнот номиналом 10: " + outSumTensInBank);
             System.out.println("Выдача банкнот номиналом 1: " + sumRequestedOnes);
-            sumRequestedUsd = (sumRequestedUsd + sumRequestedOnes) / 2;
-            System.out.println("\nСумма выдачи равна: " + sumRequestedUsd);
-
         } else {
-            System.out.println("\nНедостаточно банкнот для выдачи всей суммы!\n" + 
-                    "\nМаксимально доступная сумма выдачи: " + sumUsdInBank);
+            System.out.println("Недостаточно банкнот для выдачи всей суммы!\n" + 
+                    "Максимально доступная сумма выдачи: " + sumUsdInBank);
         }
     }
 }
