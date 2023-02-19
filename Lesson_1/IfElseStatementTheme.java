@@ -62,16 +62,8 @@ public class IfElseStatementTheme {
 
         if(num3 != 0) {
             System.out.print("Число: " + num3 + " - является");
-            if(num3 % 2 == 0) {
-                System.out.print(" четным");
-            } else {
-                System.out.print(" нечетным");
-            }
-            if(num3 > 0) {
-                System.out.print(" и положительным");
-            } else {
-                System.out.print(" и отрицательным");
-            }
+            System.out.printf("%s", num3 % 2 == 0 ? " четным" : " нечетным");
+            System.out.printf("%s", num3 > 0 ? " и положительным" : " и отрицательным");
         } else {
             System.out.println("Число " + num3 + " является нулем");
         }
@@ -92,19 +84,20 @@ public class IfElseStatementTheme {
         int num5Tens = num5 / 10 % 10;
         int num5Hundereds = num5 / 100;
 
-        if(num4Hundreds == num5Hundereds) {
-            System.out.println("В первом разряде цифры равны: " + num4Hundreds + " = " + 
-                    num5Hundereds);
-        }
-        if(num4Tens == num5Tens) {
-            System.out.println("Во втором разряде цифры равны: " + num4Tens + " = " + num5Tens);
-        }
-        if(num4Ones == num5Ones) {
-            System.out.println("В третьем разряде цифры равны: " + num4Ones + " = " + 
-                    num5Ones);
-        }
         if(num4Hundreds != num5Hundereds && num4Tens != num5Tens && num4Ones != num5Ones) {
             System.out.println("\nРавных цифр нет");
+        } else {
+            if(num4Hundreds == num5Hundereds) {
+                System.out.println("В первом разряде цифры равны: " + num4Hundreds + " = " + 
+                        num5Hundereds);
+            }
+            if(num4Tens == num5Tens) {
+                System.out.println("Во втором разряде цифры равны: " + num4Tens + " = " + num5Tens);
+            }
+            if(num4Ones == num5Ones) {
+                System.out.println("В третьем разряде цифры равны: " + num4Ones + " = " + 
+                        num5Ones);
+            }
         }
 
         //Задача_5: Определение символа по его коду
