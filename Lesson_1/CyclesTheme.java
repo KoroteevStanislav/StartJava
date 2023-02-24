@@ -216,13 +216,12 @@ public class CyclesTheme {
                 System.out.printf("%1$3d%2$s", i, "|");
             }
             for(int j = 2; j < 10; j++) {
-                int num8 = j * i;
                 if(i == 0) {
                     System.out.printf("%3d", j);
                 } else if(i == 1) {
                     System.out.printf("%s", "___");
                 } else if(i > 1) {
-                    System.out.printf("% 3d", num8);
+                    System.out.printf("% 3d", (j * i));
                 }
             }
             System.out.println();
