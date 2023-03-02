@@ -1,23 +1,23 @@
 public class MyFirstGame {
     public static void main(String[] args) {
-        int numComp = 57;
-        int numPlayer = 40;
+        int secretNum = 57;
+        int playerNum = 40;
 
-        if(numComp > 0 && numComp <= 100) {
-            while(numComp != numPlayer) {
-                if(numComp > numPlayer) {
-                    System.out.println("число: " + numPlayer + 
+        if(secretNum > 0 && secretNum <= 100) {
+            while(secretNum != playerNum) {
+                if(secretNum > playerNum) {
+                    System.out.println("число: " + playerNum + 
                             " меньше того, что загадал компьютер");
-                    numPlayer++;
-                } else if(numComp < numPlayer) {
-                    System.out.println("число: " + numPlayer + 
+                    playerNum++;
+                } else if(secretNum < playerNum) {
+                    System.out.println("число: " + playerNum + 
                             " больше того, что загадал компьютер");
-                    numPlayer--;
+                    playerNum--;
                 }
             }
             System.out.println("Вы победили!");
         } else {
-            System.out.println("Вышли за полуинтервал");
+            System.out.println("Нужно использовать целое число из полуинтервала (0, 100]");
         }
     }
 }
