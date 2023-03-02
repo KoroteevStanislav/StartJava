@@ -25,37 +25,29 @@ public class CyclesTheme {
         int num1 = 10;
         int num2 = 5;
         int num3 = -1;
-        int max = 0;
-        int min = 0;
-
-        if(num1 >= num2) {
-            max = num1 >= num3 ? num1 : num3;
-            min = num2 <= num3 ? num2 : num3;
-        } else {
-            max = num1 <= num3 ? num1 : num3;
-            min = num2 >= num3 ? num2 : num3;
-        }
+        int max = 10;
+        int min = -1;
 
         for(int i = max - 1; i > min; i--) {
-            System.out.print(i + ", ");
+            System.out.printf("% 2d",i);
         }
 
         //Задача_3: Вывод реверсивного числа и суммы его цифр
         System.out.println("\n\n3.Вывод реверсивного числа и суммы его цифр\n");
 
         int num4 = 1_234;
-        int sumRemainder = 0;
+        int sumRemainders = 0;
 
         System.out.print("Реверсивное число: ");
 
         while(num4 > 0) {
             int remainder = num4 % 10;
-            sumRemainder += remainder;
+            sumRemainders += remainder;
             num4 /= 10;
             System.out.print(remainder);
         }
 
-        System.out.println("\nСумма чисел равна: " + sumRemainder);
+        System.out.println("\nСумма чисел равна: " + sumRemainders);
 
         //Задача_4: Вывод чисел на консоль в несколько строк
         System.out.println("\n4.Вывод чисел на консоль в несколько строк\n");
@@ -75,22 +67,21 @@ public class CyclesTheme {
                 }
             }
         }
-        System.out.println();
 
         //Задача_5: Проверка количества двоек на четность/нечетность
         System.out.println("\n5.Проверка количества двоек на четность/нечетность\n");
 
         int num5 = 3_242_592;
+        int digit = num5;
         int sumTwos = 0;
 
         System.out.print("Число: " + num5 + " содержит ");
 
-        while(num5 > 0) {
-            int digit = num5 % 10;
-            if(digit == 2) {
+        while(digit > 0) {
+            if(digit % 10 == 2) {
                 sumTwos++;
             }
-            num5 /= 10;
+            digit /= 10;
         }
 
         System.out.print("Двоек: " + sumTwos);
@@ -114,35 +105,35 @@ public class CyclesTheme {
         System.out.println();
 
         int numLines = 5;
-        int numCharInLines = 5;
+        int numCharInLine = 5;
 
         while (numLines > 0) {
             numLines--;
-            while(numCharInLines > 0) {
+            while(numCharInLine > 0) {
                 System.out.print("#");
-                numCharInLines--;
+                numCharInLine--;
             }
             System.out.println();
-            numCharInLines = numLines;
+            numCharInLine = numLines;
         }
 
         System.out.println();
 
         numLines = 0;
-        numCharInLines = 0;
+        numCharInLine = 0;
         int numMaxChar = 2;
 
         do {
             do {
                 System.out.print("$");
                 numLines++;
-            } while(numLines <= numCharInLines);
+            } while(numLines <= numCharInLine);
             System.out.println();
-            if(numCharInLines >= numMaxChar) {
+            if(numCharInLine >= numMaxChar) {
                 numMaxChar--;
-                numCharInLines--;
+                numCharInLine--;
             } else {
-                numCharInLines++;
+                numCharInLine++;
             }
             numLines = 0;
         } while(numMaxChar >= 0);
@@ -186,8 +177,8 @@ public class CyclesTheme {
         System.out.println("\n9.Определение, является ли число счастливым\n");
 
         int num7 = 467_359;
-        int rightHalfNum7 = num7 / 1000;
-        int leftHalfNum7 = num7 % 1000;
+        int rightHalfNum7 = num7 % 1000;
+        int leftHalfNum7 = num7 / 1000;
         int sumRight = 0;
         int sumLeft = 0;
 
