@@ -25,8 +25,21 @@ public class CyclesTheme {
         int num1 = 10;
         int num2 = 5;
         int num3 = -1;
-        int max = 10;
-        int min = -1;
+        int max = num3;
+        int min = num3;
+
+        if(num1 > max) {
+            max = num1;
+        }
+        if(num2 > max) {
+            max = num2;
+        }
+        if(num1 < min) {
+            min = num1;
+        }
+        if(num2 < min) {
+            min = num2;
+        }
 
         for(int i = max - 1; i > min; i--) {
             System.out.printf("% 2d",i);
